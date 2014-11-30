@@ -10,7 +10,7 @@ Backup file and package
   B1: Tải file shell backup và file path.txt theo đường link sau. Đặt file shell vào thư mục bạn lựa chọn ở đấy mình đặt trong thư mục /root. 
   
 ```sh
-git clone https://github.com/hocchudong/Backup-file-and-package.git
+git clone https://github.com/hocchudong/backup-openstack.git
 ```
   B2: Cài đặt Cron trên Ubuntu: 
 
@@ -33,7 +33,9 @@ git clone https://github.com/hocchudong/Backup-file-and-package.git
 # B. Restore lại hệ thống
 B1. Tải script theo đường dẫn
 
-https://github.com/thanhha123/Backup-file-and-package/blob/master/restore.sh
+```sh
+https://raw.githubusercontent.com/hocchudong/backup-openstack/master/restore.sh
+```
 
 B2. Đưa script và các file cần backup vào 1 thư mục 
 
@@ -53,11 +55,12 @@ B3. Chạy script để restore lại hệ thống
   
   B2: Tải file shell backup theo đường link sau. Đặt file shell vào thư mục bạn lựa chọn ở đấy mình đặt trong thư mục /root. 
   
-    wget https://github.com/thanhha123/Backup-file-and-package/blob/master/backuppackage.sh
-  
+    wget https://raw.githubusercontent.com/hocchudong/backup-openstack/master/restore.sh
+	
   B3: chỉnh sửa crontab
-  
-    0 0,13 * * * bash /root/backup.sh 
+ ```sh 
+ 0 0,13 * * * bash /root/backup.sh
+``` 
     
   B6: Chay file script. Hoan thanh qua trinh backup 
 
