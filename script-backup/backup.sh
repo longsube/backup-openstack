@@ -1,5 +1,5 @@
 #!/bin/bash
-time=`date +"%y%m%d-%H%M%S"`
+ngay=`eval date +%d%m%Y-%H%M%S`
 mkdir -p /root/backup/{keystone,glance,nova,neutron,cinder}
 cd /etc
 tar -cf /root/backup/keystone/"keystone_"$time.tar keystone 
