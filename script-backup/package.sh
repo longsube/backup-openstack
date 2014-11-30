@@ -1,6 +1,6 @@
 #!/bin/bash
-hostname=`hostname`
-date=`date +"%y%m%d-%H%M%S"`
+nameSRV=`hostname`
+ngay=`eval date +%d%m%Y-%H%M%S`
 cd /var/cache/apt/archives/
-tar -cvf /root/"package_"$hostname$time.tar *deb
+tar -cvf /root/"package_"$nameSRV$ngay.tar *deb
 echo " Finish!!!"
