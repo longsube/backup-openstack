@@ -65,7 +65,7 @@ B3. Chạy script để restore lại hệ thống
   B6: Chay file script. Hoan thanh qua trinh backup 
 
 
-# D. Backup SQL trong Window
+# D. Backup SQL trong Windows
 ## B1: Tạo file backup SQL 
 Tải file sqlbackup.sql theo đường dẫnsau
 
