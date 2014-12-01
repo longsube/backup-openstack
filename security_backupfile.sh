@@ -36,6 +36,6 @@ arr=$(echo $i | tr "/" "_")
      
     
 done
-expect passfile.sh 123.abc 123.abc
+expect security_passfile.sh 123.abc 123.abc
 echo " Finish!!!!!!!!!!!"
 #find $directory -ctime 7 -type f -delete
