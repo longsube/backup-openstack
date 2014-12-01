@@ -64,3 +64,75 @@ B3. Chạy script để restore lại hệ thống
     
   B6: Chay file script. Hoan thanh qua trinh backup 
 
+
+# D. Backup SQL trong Window
+## B1: Tạo file backup SQL 
+Tải file sqlbackup.sql theo đường dẫnsau
+
+     https://raw.githubusercontent.com/hocchudong/backup-openstack/master/backup_sql_windows/sqlbackup.sql
+
+Nội dung file:
+
+USE portal; 
+GO
+DECLARE @path VARCHAR(256) -- path for backup files  
+DECLARE @fileDate VARCHAR(20) -- used for file name
+DECLARE @fileName VARCHAR(256) -- filename for backup 
+SET @path = 'D:\SQL_Backup\'  
+SELECT @fileDate = CONVERT(VARCHAR(20),GETDATE(),112) + REPLACE(CONVERT(VARCHAR(20),GETDATE(),108),':','')
+SET @fileName = @path + 'portal' + '_' + @fileDate + '.BAK'  
+BACKUP DATABASE portal
+TO DISK = @fileName
+GO
+     
+Khi chạy đoạn scirpt trong SQL SERVER  các database sẽ được nén lại thành các file .BAK với tên là đường dẫn của file và được lưu ở thư mục D:\SQL_Backup\
+
+##B2: Tạo lịch trình backup SQL
+Để chạy script trên cmd ta tải thêm backup.dat theo đường dẫn
+
+     https://raw.githubusercontent.com/hocchudong/backup-openstack/master/backup_sql_windows/backup.bat
+ Nội dung file: 
+
+@ECHO OFF 
+sqlcmd -S localhost -i C:\SQLScript\sqlbackup.sql
+
+Để chạy câu lệnh trên theo một lịch trình được định nghĩa sẵn ta dùng schedule task trong windown. Cấu hình task schedule
+
+
+Mở task schedule lên và chọn create task để khởi tạo một task mới
+
+<img src=http://i.imgur.com/QcQSpIm.png width="60%" height="60%" border="1">
+
+Đặt tên cho task, tích chọn chức năng chạy task ngay cả khi user logout ra khỏi hệ thống
+
+<img src=http://prntscr.com/5c13oy width="60%" height="60%" border="1">
+
+Chuyển sang tab Triggers chọn NEW và lập lịch chạy script, giả sử trường hợp này ta chạy scirpt hàng ngày vào lúc 12:00:00 AM
+
+<img src=http://i.imgur.com/7kJNNGu.png width="60%" height="60%" border="1">
+
+Thẻ Action chọn Start Program và Browers đến thư mục chứa script cần chạy
+
+<img src=http://i.imgur.com/5DhK6cN.png width="60%" height="60%" border="1">
+
+Cuối cùng tại tab Settings, tích chọn " Run task as soon as possible a schedule is start missed"
+
+<img src=http://i.imgur.com/SB6BzwA.png width="60%" height="60%" border="1">
+
+Click OK để hoàn tất
+
+## B3: Xóa các file log, backup cũ
+ 
+Để xóa file backp cũ ta tải về script theo đường dẫn
+
+    https://raw.githubusercontent.com/hocchudong/backup-openstack/master/backup_sql_windows/del_old_bk.dat
+
+Xóa file log ta chạy scirpt theo đường dẫn
+
+    https://raw.githubusercontent.com/hocchudong/backup-openstack/master/backup_sql_windows/del_log_SQL.dat
+
+##B4: Upload lên SFTP server
+
+Chạy file scipt theo đường dẫn sau để upload lên sftp server
+
+    https://raw.githubusercontent.com/hocchudong/backup-openstack/master/backup_sql_windows/Upload_SFTP_3.dat
