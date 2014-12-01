@@ -73,17 +73,17 @@ Tải file sqlbackup.sql theo đường dẫnsau
 
 Nội dung file:
 
-USE portal; 
-GO
-DECLARE @path VARCHAR(256) -- path for backup files  
-DECLARE @fileDate VARCHAR(20) -- used for file name
-DECLARE @fileName VARCHAR(256) -- filename for backup 
-SET @path = 'D:\SQL_Backup\'  
-SELECT @fileDate = CONVERT(VARCHAR(20),GETDATE(),112) + REPLACE(CONVERT(VARCHAR(20),GETDATE(),108),':','')
-SET @fileName = @path + 'portal' + '_' + @fileDate + '.BAK'  
-BACKUP DATABASE portal
-TO DISK = @fileName
-GO
+    USE portal; 
+    GO
+    DECLARE @path VARCHAR(256) -- path for backup files  
+    DECLARE @fileDate VARCHAR(20) -- used for file name
+    DECLARE @fileName VARCHAR(256) -- filename for backup 
+    SET @path = 'D:\SQL_Backup\'  
+    SELECT @fileDate = CONVERT(VARCHAR(20),GETDATE(),112) + REPLACE(CONVERT(VARCHAR(20),GETDATE(),108),':','')
+    SET @fileName = @path + 'portal' + '_' + @fileDate + '.BAK'  
+    BACKUP DATABASE portal
+    TO DISK = @fileName
+    GO
      
 Khi chạy đoạn scirpt trong SQL SERVER  các database sẽ được nén lại thành các file .BAK với tên là đường dẫn của file và được lưu ở thư mục D:\SQL_Backup\
 
@@ -105,7 +105,7 @@ Mở task schedule lên và chọn create task để khởi tạo một task m�
 
 Đặt tên cho task, tích chọn chức năng chạy task ngay cả khi user logout ra khỏi hệ thống
 
-<img src=http://prntscr.com/5c13oy width="60%" height="60%" border="1">
+<img src=http://i.imgur.com/IryRgUv.png width="60%" height="60%" border="1">
 
 Chuyển sang tab Triggers chọn NEW và lập lịch chạy script, giả sử trường hợp này ta chạy scirpt hàng ngày vào lúc 12:00:00 AM
 
