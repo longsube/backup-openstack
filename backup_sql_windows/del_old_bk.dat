@@ -1,0 +1,2 @@
+@ECHO OFF
+FORFILES /p D:\SQL_Backup /s /m *.BAK /d -4 /c "CMD /C del /Q /F @FILE"
