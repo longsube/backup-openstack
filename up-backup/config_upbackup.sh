@@ -1,8 +1,9 @@
 #!/bin/bash
 
+# Sua cac thong tin truoc khi thuc thi
 HOST='10.30.0.111'
-USER='ftp_client'
-PASSWD='Vdc1T@!d3m0'
+USER='client'
+PASSWD='123456a@'
 DuongDan='/var/backup/config/'
 DuongDanFTP='config_backup'
 # Doi ten duong dan khi thuc hien

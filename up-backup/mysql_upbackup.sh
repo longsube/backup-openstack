@@ -1,8 +1,10 @@
 #!/bin/bash
 
-HOST='10.30.0.111'
-USER='ftp_client'
-PASSWD='Vdc1T@!d3m0'
+
+# Sua thong tin truoc khi thuc thi
+HOST='X.X.X.X'
+USER='client'
+PASSWD='123456a@'
 DuongDan='/var/backup/mysql/'
 # Doi ten duong dan khi thuc hien
 FILE=`ls -1t $DuongDan | head -1`

@@ -7,9 +7,9 @@ while read line ; do
 done < duongdanmysql.txt
 
 
-HOST='10.30.0.111'
-USER='ftp_client'
-PASSWD='Vdc1T@!d3m0'
+HOST='X.X.X.X'
+USER='client'
+PASSWD='123456a@'
 for i in "${MYARRAY[@]}";
 do
 # Doi ten duong dan khi thuc hien

@@ -6,10 +6,10 @@ while read line ; do
     index=$(($index+1))
 done < duongdanfile.txt
 
-
-HOST='10.30.0.111'
-USER='ftp_client'
-PASSWD='Vdc1T@!d3m0'
+# Sua cac thong so truoc khi thuc thi
+HOST='x.x.x.x'
+USER='client'
+PASSWD='123456a@'
 for i in "${MYARRAY[@]}";
 do
 # Doi ten duong dan khi thuc hien
