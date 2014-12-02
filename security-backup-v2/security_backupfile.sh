@@ -5,13 +5,13 @@ nameSRV=`hostname`
 pack1="/var/cache/apt/archives/ccrypt*"
 if ! [ -f $pack1 ]
 then
-sudo apt-get install ccrypt -n
+sudo apt-get install ccrypt -y
 fi
 
 pack2="/var/cache/apt/archives/expect*"
 if ! [ -f $pack1 ]
 then
-sudo apt-get install expect -n
+sudo apt-get install expect -y
 fi
 
 directory="/root/backup/config"
