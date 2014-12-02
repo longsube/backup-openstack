@@ -1,0 +1,2 @@
+FILE=`ls -1t | head -1`
+expect sftp.sh a "put $FILE"
