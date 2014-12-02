@@ -8,12 +8,13 @@ DuongDan='/root/mysql_folder/'
 FILE=`ls -1t $DuongDan | head -1`
 
 /usr/bin/expect - << EOF
-   spawn sftp $USER@$HOST
+   spawn sftp  $USER@$HOST
         expect "password:"
-        send "$PASSWD\r"
+        send "$PASSWD\n"
         expect "sftp>"
-        send "put $DuongDan$FILE\r"
+        send "put $DuongDan$FILE\n"
         expect "sftp>"
-        send "exit\r"
+        send "quit\n"
+        send_user "done.\n"
         interact
 EOF
