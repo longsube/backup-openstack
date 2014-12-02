@@ -20,7 +20,7 @@ if ! [ -d $directory ]
 then
 mkdir -p /root/backup/config
 fi
-
+rm link.txt
 index=0
 while read line ; do
     MYARRAY[$index]="$line"
@@ -33,9 +33,9 @@ arr=$(echo $i | tr "/" "_")
    
     tar -cf /root/backup/config/"$nameSRV""_""$ngay""$arr".tar $i
     
-     
+echo "/root/backup/config/"$nameSRV""_""$ngay""$arr".tar" >> link.txt 
     
 done
-expect security_passfile.sh 123.abc 123.abc
+expect security_passfile.sh 
 echo " Finish!!!!!!!!!!!"
 #find $directory -ctime 7 -type f -delete
