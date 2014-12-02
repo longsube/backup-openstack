@@ -14,11 +14,11 @@ then
 sudo apt-get install expect -y
 fi
 
-directory="/root/backup/config"
+ThuMuc="/var/backup/sec-config/"
 echo "Create folder backup"
-if ! [ -d $directory ]
+if ! [ -d $ThuMuc ]
 then
-mkdir -p /root/backup/config
+mkdir -p $ThuMuc
 fi
 rm link.txt
 index=0
@@ -31,9 +31,9 @@ for i in "${MYARRAY[@]}";
 do
 arr=$(echo $i | tr "/" "_")
    
-    tar -cf /root/backup/config/"$nameSRV""_""$ngay""$arr".tar $i
+    tar -cf "$ThuMuc""$nameSRV""_""$ngay""$arr".tar $i
     
-echo "/root/backup/config/"$nameSRV""_""$ngay""$arr".tar" >> link.txt 
+echo "$ThuMuc""$nameSRV""_""$ngay""$arr".tar" >> link.txt 
     
 done
 expect security_passfile.sh 
