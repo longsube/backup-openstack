@@ -13,5 +13,6 @@ FILE=`ls -1t /root/mysql_folder/ | head -1`
         expect "sftp>"
         send "put /root/mysql_folder/$FILE\r"
         send "exit\r"
+        expect "sftp>"
         interact
 EOF
