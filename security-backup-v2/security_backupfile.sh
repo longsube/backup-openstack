@@ -9,7 +9,7 @@ sudo apt-get install ccrypt -y
 fi
 
 pack2="/var/cache/apt/archives/expect*"
-if ! [ -f $pack1 ]
+if ! [ -f $pack2 ]
 then
 sudo apt-get install expect -y
 fi
