@@ -4,7 +4,6 @@
 /etc/neutron
 /etc/cinder
 /var/log/glance
-/var/lib/glance
 /var/log/keystone
 /var/lib/keystone
 /var/log/cinder
