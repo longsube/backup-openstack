@@ -1,19 +1,18 @@
 
-set timeout 5
+set timeout 20
+proc check_link {link} {
 
-set pass [lindex $argv 0]
+    spawn ccrypt $link
+    expect "key";
+    send "123\r"
+    expect "key";
+    send "123\r"
 
-set password [lindex $argv 1]
-cd /root/backup/config
+    expect eof
+}
 
-spawn ccrypt *.tar
-
-expect "key"
-
-send "$pass\r";
-
-expect "key"
-
-send "$password\r";
-
-interact
+set fp [open link.txt r]
+while {[gets $fp line] != -1} {
+    check_link $line
+}
+close $fp
