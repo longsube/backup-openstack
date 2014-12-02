@@ -14,7 +14,7 @@ then
 sudo apt-get install expect -y
 fi
 
-ThuMuc="/var/backup/sec_config/"
+ThuMuc="/var/backup/config/"
 echo "Create folder backup"
 if ! [ -d $ThuMuc ]
 then

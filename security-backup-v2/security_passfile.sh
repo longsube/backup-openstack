@@ -4,9 +4,9 @@ proc check_link {link} {
 
     spawn ccrypt $link
     expect "key";
-    send "123\r"
+    send "Vdc1T@!d3m0\r"
     expect "key";
-    send "123\r"
+    send "Vdc1T@!d3m0\r"
 
     expect eof
 }
