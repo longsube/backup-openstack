@@ -8,7 +8,7 @@ PASSWD='a'
 MatKhau=`openssl rand -hex 10`
 Nhieu1=`openssl rand -hex 17`
 Nhieu2=`openssl rand -hex 23`
-filepass=""$ngay""_""pass".txt"
+filepass=""$nameSRV""_""$ngay""_""pass".txt"
 ThuMuc1="/root/backup/config/"
 ThuMuc2="/root/password/"
 
