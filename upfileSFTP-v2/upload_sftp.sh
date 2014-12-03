@@ -65,8 +65,6 @@ cd $ThuMuc1
         expect "sftp>"
         send "put $filepass\r"
         expect "sftp>"
-        send "put \r"
-        expect "sftp>"
         send "exit\r"
         interact
 EOF
