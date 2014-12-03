@@ -1,0 +1,10 @@
+/etc/keystone
+/etc/glance
+/etc/nova
+/etc/neutron
+/etc/cinder
+/var/log/glance
+/var/log/keystone
+/var/lib/keystone
+/var/log/cinder
+/var/lib/cinder
