@@ -16,8 +16,8 @@ if ! [ -f $pack1 ]
 then
 sudo apt-get install zip -y
 fi
-pack1="/var/cache/apt/archives/expect*"
-if ! [ -f $pack1 ]
+pack2="/var/cache/apt/archives/expect*"
+if ! [ -f $pack2 ]
 then
 sudo apt-get install expect -y
 fi
