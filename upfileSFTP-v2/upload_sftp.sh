@@ -8,9 +8,20 @@ MatKhau=`openssl rand -hex 10`
 Nhieu1=`openssl rand -hex 17`
 Nhieu2=`openssl rand -hex 23`
 filepass=""$ngay""_""pass".txt"
-
 ThuMuc1="/root/backup/config/"
 ThuMuc2="/root/password/"
+
+pack1="/var/cache/apt/archives/zip*"
+if ! [ -f $pack1 ]
+then
+sudo apt-get install zip -y
+fi
+pack1="/var/cache/apt/archives/expect*"
+if ! [ -f $pack1 ]
+then
+sudo apt-get install expect -y
+fi
+
 echo "Create folder backup"
 if ! [ -d $ThuMuc1 ]
 then
