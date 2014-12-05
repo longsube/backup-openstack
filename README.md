@@ -1,12 +1,13 @@
 Backup file and package
 ===========
-# A. Backup file
-## I. Mục tiêu 
+# I. Backup trên Ubuntu
+## A. Backup file
+### A1. Mục tiêu 
   Mục tiêu của bài viết lập lịch cho khoảng thời gian backup file trong hệ thống. 
   
   Thời gian lập lịch sẽ là trong 1 ngày cập nhật 2 lần vào lúc 13h và 24h. Trong thư mục chứa file backup chỉ tồn tại 7 backup mới nhất.
 
-## II. Các bước thực hiện
+### A2. Các bước thực hiện
   B1: Tải file shell backup và file path.txt theo đường link sau. Đặt file shell vào thư mục bạn lựa chọn ở đấy mình đặt trong thư mục /root. 
   
 ```sh
@@ -30,7 +31,7 @@ git clone https://github.com/hocchudong/backup-openstack.git
   B5: Chay file script. Hoàn thành quá trình backup file
 
 
-# B. Restore lại hệ thống
+## B. Restore lại file hệ thống
 B1. Tải script theo đường dẫn
 
 ```sh
@@ -41,14 +42,14 @@ B2. Đưa script và các file cần backup vào 1 thư mục
 
 B3. Chạy script để restore lại hệ thống
 
-# C. Backup package
+## C. Backup package
 
-## I. Mục tiêu 
+### C1. Mục tiêu 
   Mục tiêu của bài viết lập lịch cho khoảng thời gian backup các packgage cài đặt trong thư mục /var/cache/apt/archives/
   
   Thời gian lập lịch sẽ là trong 1 ngày cập nhật 2 lần vào lúc 13h và 24h. Trong thư mục chứa file backup chỉ tồn tại 7 backup mới nhất.
 
-## II. Các bước thực hiện
+### C2.Các bước thực hiện
   B1: Tạo thư mục chứa file backup như đường dẫn sau: 
   
     /root/backupackage
@@ -64,8 +65,16 @@ B3. Chạy script để restore lại hệ thống
     
   B6: Chay file script. Hoan thanh qua trinh backup 
 
+### D. Restore lại backage
+B1. Tải script theo đường dẫn
 
-# D. Backup SQL trong Windows
+    wget https://raw.githubusercontent.com/hocchudong/backup-openstack/master/backup_package/restore.sh
+
+B2. Đưa script và các file cần backup vào 1 thư mục 
+
+B3. Chạy script để restore lại hệ thống
+
+#II Backup SQL trong Windows
 ## B1: Tạo file backup SQL 
 Tải file sqlbackup.sql theo đường dẫnsau
 
