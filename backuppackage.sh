@@ -3,14 +3,20 @@ nameSRV=`hostname`
 ngay=`eval date +%d%m%Y-%H%M%S`
 cd /var/cache/apt/archives/
 tenfile="$nameSRV""_""$ngay""_package".tar
-tar -cvf /root/backuppackage/$tenfile *deb
+ThuMuc="/root/backuppackage/"
+
+if ! [ -d $ThuMuc ]
+then
+mkdir -p $ThuMuc
+fi
+tar -cvf $ThuMuc/$tenfile *deb
 
 
 
 HOST='172.16.69.161'
 USER='admin'
 PASSWD='a'
-cd /root/backuppackage/
+cd $ThucMuc
 
 /usr/bin/expect - << EOF
    spawn sftp $USER@$HOST
