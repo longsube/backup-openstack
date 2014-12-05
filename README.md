@@ -55,7 +55,7 @@ B3. Chạy script để restore lại hệ thống
   
   B2: Tải file shell backup theo đường link sau. Đặt file shell vào thư mục bạn lựa chọn ở đấy mình đặt trong thư mục /root. 
   
-    wget https://raw.githubusercontent.com/hocchudong/backup-openstack/master/restore.sh
+      https://raw.githubusercontent.com/hocchudong/backup-openstack/master/backuppackage.sh
 	
   B3: chỉnh sửa crontab
  ```sh 
