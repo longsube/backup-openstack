@@ -2,11 +2,13 @@
 echo " Start restore!!!!!!"
 directory1="etc"
 directory2="var"
-find . -maxdepth 1 -name "*.tar" -exec tar -xvf {} \;
+find . -maxdepth 1 -name "*.zip" -exec zip -xvf {} \;
 if [ -d $directory1 ]
 then
-rsync -rv etc/ /etc/fi
+rsync -rv etc/ /etc/
+fi
 if [ -d $directory2 ]
 then
-rsync -rv var/ /var/fi
+rsync -rv var/ /var/
+fi
 echo " Finish!!!!!!!"
