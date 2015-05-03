@@ -19,6 +19,7 @@ PASSWD='a'
 cd $ThucMuc
 
 /usr/bin/expect - << EOF
+   set timeout -1
    spawn sftp $USER@$HOST
         expect "password:"
         send "$PASSWD\r"
