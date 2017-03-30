@@ -1,6 +1,0 @@
-controller1.hn.vnpt_30032017-101609_etc_openstack-dashboard.zip
-controller1.hn.vnpt_30032017-101609_etc_cinder.zip
-controller1.hn.vnpt_30032017-101609_etc_neutron.zip
-controller1.hn.vnpt_30032017-101609_etc_nova.zip
-controller1.hn.vnpt_30032017-101609_etc_glance.zip
-controller1.hn.vnpt_30032017-101609_etc_keystone.zip
