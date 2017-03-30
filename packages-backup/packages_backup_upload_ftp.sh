@@ -1,6 +1,6 @@
 #!/bin/bash
 DuongDan='/var/backup/packages/'
-backup_folder=`ls -1t $DuongDanFile | head -1`
+backup_folder=`ls -1t $DuongDan | head -1`
 DuongDanFTP='packages_backup'
 HOST='x.x.x.x'
 USER='yyyyy'
