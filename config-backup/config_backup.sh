@@ -3,7 +3,7 @@
 ngay=`eval date +%d%m%Y-%H%M%S`
 nameSRV=`hostname`
 
-ThuMuc1="/var/backup/config/"
+ThuMuc1="/var/backup/config/""$nameSRV""_""$ngay/"
 
 # Kiem tra goi zip da duoc cai dat chua
 pack1="/var/cache/apt/archives/zip*"

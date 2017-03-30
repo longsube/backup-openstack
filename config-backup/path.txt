@@ -5,3 +5,4 @@
 /etc/cinder
 /etc/openstack-dashboard
 /etc/ceph
+/etc/libvirt
