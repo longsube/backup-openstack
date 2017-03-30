@@ -4,3 +4,4 @@
 /etc/neutron
 /etc/cinder
 /etc/openstack-dashboard
+/etc/ceph
