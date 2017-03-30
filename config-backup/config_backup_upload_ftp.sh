@@ -10,9 +10,9 @@ while read line ; do
 done < file_backup_link.txt
 
 # Sua cac thong so truoc khi thuc thi
-HOST='10.193.0.105'
-USER='mycloudvnn_ftp'
-PASSWD='hnCL0UD#@!105'
+HOST='x.x.x.x'
+USER='yyyyy'
+PASSWD='zzzz'
 for i in "${MYARRAY[@]}";
 do
 # Doi ten duong dan khi thuc hien

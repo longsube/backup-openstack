@@ -1,8 +1,8 @@
 #!/bin/bash
 
-HOST='10.193.0.105'
-USER='mycloudvnn_ftp'
-PASSWD='hnCL0UD#@!105'
+HOST='x.x.x.x'
+USER='yyyyy'
+PASSWD='zzzz'
 DuongDan='/var/backup/packages/'
 # Doi ten duong dan khi thuc hien
 FILE=`ls -1t $DuongDan | head -1`
