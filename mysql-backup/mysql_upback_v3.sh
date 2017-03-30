@@ -4,6 +4,13 @@ HOST='x.x.x.x'
 USER='yyyyy'
 PASSWD='zzzz'
 DuongDan='/var/backup/mysql/'
+# Kiem tra goi expect da duoc cai dat chua
+pack1="/var/cache/apt/archives/expect*"
+if ! [ -f $pack1 ]
+then
+echo "Cai dat goi zip"
+sudo apt-get install expect -y
+fi
 # Doi ten duong dan khi thuc hien
 FILE=`ls -1t $DuongDan | head -1`
 

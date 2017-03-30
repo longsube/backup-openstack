@@ -14,6 +14,13 @@ backup_folder=`ls -1t $DuongDanFile | head -1`
 HOST='x.x.x.x'
 USER='yyyyy'
 PASSWD='zzzz'
+# Kiem tra goi expect da duoc cai dat chua
+pack1="/var/cache/apt/archives/expect*"
+if ! [ -f $pack1 ]
+then
+echo "Cai dat goi zip"
+sudo apt-get install expect -y
+fi
 #for i in "${MYARRAY[@]}";
 #do
 # Doi ten duong dan khi thuc hien

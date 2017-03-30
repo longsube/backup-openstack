@@ -6,10 +6,18 @@ while read line ; do
     index=$(($index+1))
 done < /var/tools/up-back-v3/duongdanfile_mysql.txt
 
+
 # Sua cac thong so truoc khi thuc thi
 HOST='x.x.x.x'
 USER='yyyyy'
 PASSWD='zzzz'
+# Kiem tra goi expect da duoc cai dat chua
+pack1="/var/cache/apt/archives/expect*"
+if ! [ -f $pack1 ]
+then
+echo "Cai dat goi zip"
+sudo apt-get install expect -y
+fi
 for i in "${MYARRAY[@]}";
 do
 # Doi ten duong dan khi thuc hien
