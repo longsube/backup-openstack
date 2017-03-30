@@ -1,28 +1,10 @@
 #!/bin/bash
-nameSRV=`hostname`
-ngay=`eval date +%d%m%Y-%H%M%S`
-backup_folder="/var/backup/packages/""$nameSRV""_""$ngay/"
 
-# Kiem tra goi tar da duoc cai dat chua
-pack1="/var/cache/apt/archives/tar*"
-if ! [ -f $pack1 ]
-then
-echo "Cai dat goi tar"
-sudo apt-get install tar -y
-fi
+HOSTNAME=`cat /etc/hostname`
+#DATE=`eval date +%d%m%Y-%H%M%S`
+DATE=`eval date +%Y%m%d-%H%M%S`
+output="$HOSTNAME-$DATE-info.txt"
 
-if ! [ -d $backup_folder ]
-then
-mkdir -p $backup_folder
-fi
-
-file_name="$backup_folder""$nameSRV""_""$ngay""_packages"
-cd /var/cache/apt/archives/
-tar -cvf "$file_name".tar *deb
-
-
-# Xuat thong tin ve phien ban cac package
-output="$backup_folder""$nameSRV""_""$ngay""-info.txt"
 printf 'HOSTNAME\n' > $output
 cat /etc/hostname >> $output
 
@@ -50,6 +32,3 @@ iptables -t nat -S >> $output
 
 printf '\n\nPACKAGES\n'  >> $output
 dpkg -l >> $output
-
-echo " Finish!!!"
-

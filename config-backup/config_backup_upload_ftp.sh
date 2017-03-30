@@ -3,6 +3,7 @@
 # Sua cac thong tin truoc khi thuc thi
 DuongDanFile="/var/backup/config/"
 backup_folder=`ls -1t $DuongDanFile | head -1`
+DuongDanFTP='config_backup'
 # ls -1t $DuongDanFile > file_backup_link.txt
 # index=0
 # while read line ; do
@@ -25,7 +26,7 @@ fi
 #do
 # Doi ten duong dan khi thuc hien
 # FILE=`ls -1t $DuongDan | head -1`
-DuongDanFTP='config_backup'
+
 /usr/bin/expect - << EOF
    spawn sftp -P 22 $USER@$HOST:$DuongDanFTP
         expect "password:"
