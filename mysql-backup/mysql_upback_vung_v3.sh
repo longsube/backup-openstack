@@ -1,22 +1,23 @@
-DuongDanFile="/var/backup/mysql/"
-ls -1t $DuongDanFile > duongdanmysql.txt
+DuongDanFile="/var/MYSQLpass/"
+ls -1t $DuongDanFile > /var/tools/up-back-v3/duongdanfile_mysql.txt
 index=0
 while read line ; do
     MYARRAY[$index]="$line"
     index=$(($index+1))
-done < duongdanmysql.txt
+done < /var/tools/up-back-v3/duongdanfile_mysql.txt
 
-
-HOST='X.X.X.X'
-USER='client'
-PASSWD='123456a@'
+# Sua cac thong so truoc khi thuc thi
+HOST='10.193.0.105'
+USER='mycloudvnn_ftp'
+PASSWD='hnCL0UD#@!105'
 for i in "${MYARRAY[@]}";
 do
 # Doi ten duong dan khi thuc hien
 # FILE=`ls -1t $DuongDan | head -1`
 DuongDanBackup='mysql_backup'
 /usr/bin/expect - << EOF
-   spawn sftp -P 9225 $USER@$HOST:$DuongDanBackup
+set timeout -1
+   spawn sftp  $USER@$HOST:$DuongDanBackup
         expect "password:"
         send "$PASSWD\r"
         expect "sftp>"
@@ -26,3 +27,5 @@ DuongDanBackup='mysql_backup'
         interact
 EOF
 done
+rm -rf $DuongDanFile
+

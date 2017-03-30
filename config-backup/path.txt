@@ -1,0 +1,6 @@
+/etc/keystone
+/etc/glance
+/etc/nova
+/etc/neutron
+/etc/cinder
+/etc/openstack-dashboard
