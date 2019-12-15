@@ -9,7 +9,7 @@ Hướng dẫn sử dụng script Backup MySQL và lưu trữ lên SFTP server
  - File database nén và mật khẩu nén được đặt vào các thư mục riêng biệt, với tên được đánh theo ngày thực hiện backup.
  - File backup chỉ được lưu giữ 7 ngày.
 
-## 1. Cài đặt
+## 1. Cài đặt gói
  - Cài đặt MariaDB server
 ```
 apt-get update
@@ -54,16 +54,14 @@ root@controller:~# mysql -u root
 apt-get install zip -y
 ```
 
-
-
-## 2. Thực hiện script Backup MySQL
-Download script và đặt tại thư mục /root
+## 2. Triển khai script Backup MySQL
+ - Download script và đặt tại thư mục /root
 ```
 wget -O /root/backup_mysql.sh https://raw.githubusercontent.com/longsube/backup-openstack/master/mysql-backup/backup_mysql.sh
 chmod +x /root/backup_mysql.sh
 ```
 
-Nội dung script:
+ - Nội dung script:
 ```
 #!/bin/bash
 
@@ -116,7 +114,19 @@ sleep 10
 find $ThuMuc1 -ctime 7 -type f -delete
 ```
 
-Thực hiện script trên máy chủ:
+ - Thực hiện script trên máy chủ:
 ```
 bash /root/backup_mysql.sh
 ```
+
+## 3. Kiểm thử
+ - Như khai báo trong script, file backup nén đặt tại `/var/backup/mysql/` và file password giải nén đặt tại `/var/MYSQLpass/`. File backup được đặt tên như sau:
+ `localhost.localdomain_15122019-051531.sql.zip`
+  - `localhost.localdomain`: tên của máy chủ.
+  - `15122019-051531`: thời gian thực hiện backup
+
+ - Thử giải nén file backup vào thư mục `root`
+ ```
+ apt-get install unzip -y
+ unzip [file.zip] -d /root
+ ```
