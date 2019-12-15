@@ -88,12 +88,12 @@ bash /root/package_backup.sh
 ```
 
 ## 3. Kiểm thử
- - Như khai báo trong script, file backup nén đặt tại `/var/backup/packages/` và file password giải nén đặt tại `/var/MYSQLpass/`. File backup được đặt tên như sau:
- `localhost.localdomain_15122019-051531.sql.zip`
+ - Như khai báo trong script, thư mục backup đặt tại `/var/backup/packages/`. 
+ `localhost.localdomain_15122019-053940`
   - `localhost.localdomain`: tên của máy chủ.
-  - `15122019-051531`: thời gian thực hiện backup
+  - `15122019-053940`: thời gian thực hiện backup
 
- - Thử giải nén file backup vào thư mục `root`
- ```
- tar -zxvf rarlinux-*.tar.gz
- ```
+ - Thư mục bao gồm 2 file:
+
+`localhost.localdomain_15122019-053940_packages.tar`: chứa file nén backup
+`localhost.localdomain_15122019-053940-info.txt`: chứa thông tin về các bản backup
