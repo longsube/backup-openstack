@@ -95,5 +95,5 @@ bash /root/package_backup.sh
 
  - Thư mục bao gồm 2 file:
 
-`localhost.localdomain_15122019-053940_packages.tar`: chứa file nén backup
-`localhost.localdomain_15122019-053940-info.txt`: chứa thông tin về các bản backup
+  - `localhost.localdomain_15122019-053940_packages.tar`: chứa file nén backup
+  - `localhost.localdomain_15122019-053940-info.txt`: chứa thông tin về các bản backup
