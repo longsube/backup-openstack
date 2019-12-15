@@ -1,4 +1,4 @@
-Hướng dẫn sử dụng script Backup MySQL và lưu trữ lên SFTP server
+**Hướng dẫn sử dụng script Backup MySQL và lưu trữ lên SFTP server**
 
 *Môi trường thực hiện:*
  - OS: Ubuntu 14.04.5, kernel 4.4.0-142-generic
