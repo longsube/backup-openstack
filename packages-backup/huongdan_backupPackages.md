@@ -1,3 +1,29 @@
+**Hướng dẫn sử dụng script Backup các package đã cài đặt trong OS**
+
+*Môi trường thực hiện:*
+ - OS: Ubuntu 14.04.5, kernel 4.4.0-142-generic
+
+ *Kịch bản thực hiện:* 
+ - Script thực hiện backup các gói cài đặt.
+ - Các gói cài đặt được nén và lưu trữ.
+ - Thông tin về các gói cài đặt được lưu trữ cùng thư mục với file nén
+
+## 1. Cài đặt gói
+ - Cài đặt gói `tar`
+```
+apt-get update
+apt-get install -y tar
+```
+
+## 2. Triển khai script Backup package
+ - Download script và đặt tại thư mục /root
+```
+wget -O /root/package_backup.sh https://raw.githubusercontent.com/longsube/backup-openstack/master/packages-backup/packages_backup.sh
+chmod +x /root/package_backup.sh
+```
+
+ - Nội dung script:
+```
 #!/bin/bash
 
 # Khai bao dinh dang ngay-thang-nam thuc hien backup
@@ -54,4 +80,20 @@ printf '\n\nPACKAGES\n'  >> $output
 dpkg -l >> $output
 
 echo " Finish!!!"
+```
 
+ - Thực hiện script trên máy chủ:
+```
+bash /root/package_backup.sh
+```
+
+## 3. Kiểm thử
+ - Như khai báo trong script, file backup nén đặt tại `/var/backup/packages/` và file password giải nén đặt tại `/var/MYSQLpass/`. File backup được đặt tên như sau:
+ `localhost.localdomain_15122019-051531.sql.zip`
+  - `localhost.localdomain`: tên của máy chủ.
+  - `15122019-051531`: thời gian thực hiện backup
+
+ - Thử giải nén file backup vào thư mục `root`
+ ```
+ tar -zxvf rarlinux-*.tar.gz
+ ```
